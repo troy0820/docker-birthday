@@ -2,6 +2,8 @@ FROM node:8-alpine
 
 COPY package.json /tmp/package.json
 
+COPY package-lock.json /tmp/package-lock.json
+
 RUN cd /tmp/ && npm install --production
 
 RUN mkdir -p /var/www && cp -a /tmp/node_modules /var/www
