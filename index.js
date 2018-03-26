@@ -18,7 +18,9 @@ server.route({
       if (err) {
         reject(err)
       }
-      resolve(JSON.parse(body));
+
+      const promise = JSON.parse(body);
+      resolve(promise);
       });
     })
         return promise;
