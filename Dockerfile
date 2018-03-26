@@ -10,7 +10,7 @@ WORKDIR /var/www
 
 COPY . /var/www
 
-EXPOSE 3000
+EXPOSE 8080
 
 VOLUME /var/www
 
