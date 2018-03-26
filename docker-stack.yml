@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+      docker-birthday:
+        image: troy0820/docker-birthday:v1
+        ports:
+          - '8080'

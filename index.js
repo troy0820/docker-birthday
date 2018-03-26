@@ -28,6 +28,18 @@ server.route({
   }
 });
 
+server.route({
+  method: 'GET',
+  path: '/health',
+  config: {
+    description: 'HEALTH ENDPOINT',
+    handler: async (req, h) => {
+   return h.response(200);
+    }
+  }
+});
+
+
 async function start() {
 
     try {
