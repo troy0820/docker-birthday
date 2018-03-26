@@ -11,7 +11,8 @@
   "author": "Troy M. Connor <troy0820@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "hapi": "^17.2.3"
+    "hapi": "^17.2.3",
+    "request": "^2.85.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

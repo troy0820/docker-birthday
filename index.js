@@ -1,4 +1,6 @@
 const Hapi = require('hapi')
+const request = require('request');
+
 const server = new Hapi.Server({
   host: '0.0.0.0',
   port: '8080'
@@ -10,11 +12,19 @@ server.route({
   path: '/',
   config: {
     description: 'Index',
-    handler (req, h) {
-      return "Welcome to Hapi";
-    }
+    handler: async (req, h) => {
+      const promise = new Promise((resolve, reject) => {
+        request('https://seeclickfix.com/api/v2/issues?place_url=can_vancouver&per_page=10&page=1', (err, response, body) => {
+      if (err) {
+        reject(err)
+      }
+      resolve(JSON.parse(body));
+      });
+    })
+        return promise;
+   }
   }
-})
+});
 
 async function start() {
 
