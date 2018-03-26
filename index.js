@@ -29,7 +29,16 @@ server.route({
 async function start() {
 
     try {
-        await server.start();
+        await server.register(require('vision'));
+        server.views({
+          engines: {
+            html: require('ejs')
+          },
+          relativeTo: __dirname,
+          path: 'templates'
+        })
+      await server.start();
+
     }
     catch (err) {
         console.log(err);
